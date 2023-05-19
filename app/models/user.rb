@@ -10,10 +10,8 @@ class User < ApplicationRecord
   validates :password,  length: { minimum: 8 },
                         format: { with: /\A(?=.*[A-Z])(?=.*\W)/,
                                   message: 'must be at least 8 characters long with one uppercase letter and a special character' }
-
   validates :contact_number, presence: true,
                              uniqueness: true, length: { minimum: 11, maximum: 15 }
-
   def self.find_by_email_or_phone(identifier)
     where('email = :identifier OR contact_number = :identifier', identifier: identifier).first
   end

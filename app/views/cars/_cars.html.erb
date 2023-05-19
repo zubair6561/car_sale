@@ -1,0 +1,35 @@
+<div class="container">
+  <table class="table table-bordered table-striped">
+    <thead class="bg-dark text-white">
+      <tr>
+        <th>Car Model</th>
+        <th>City</th>
+        <th>Price</th>
+        <th>Engine Details </th>
+        <th>Transmission Type</th>
+        <th>Color </th>
+        <th>Milage</th>
+        <th>Engine Capacity</th>
+        <th>Assembly Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @cars.each do |car| %>
+        <tr>
+          <td><%= car.carmodel %></td>
+          <td><%= car.city %></td>
+          <td><%= car.price %></td>
+          <td><%= car.enginedetail %></td>
+          <td><%= car.transmissiontype %></td>
+          <td><%= car.color%></td>
+          <td><%= car.milage %></td>
+          <td><%= car.enginecapacity %></td>
+          <td><%= car.assemblytype %></td>  
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+
+

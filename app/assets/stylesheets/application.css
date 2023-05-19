@@ -12,31 +12,28 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap
  */
 
- .background-color {
-  /* background-color: #2f36ff9e;
-  text-align: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  border: 2px solid black;
-  font-weight: bolder;
-  font-size: 20px; */
+/* .background-color {
   background-color: rgb(216, 223, 248);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 20px;
     width: 50%;
     margin: 0px auto;
     text-align: center;
+} */
+/* nav {
+  background-color: #0d8b68;
+  color: #000000;
+  text-align: right;
+  
 }
-nav {
-  background-color: #333;
-  color: #fff;
-}
-
 nav ul {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 9px 2px;
+  
 }
 
 nav ul li {
@@ -47,4 +44,69 @@ nav ul li {
 nav ul li a {
   color: #fff;
   text-decoration: none;
-}
+} */
+
+/* table{
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+ }
+td {
+  text-align: center;
+  vertical-align: top;
+  }
+.container1 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: auto auto auto ;
+    width: auto;
+    background-color: aqua;
+  } */
+
+  .navbar {
+    background: linear-gradient(to bottom, #007bff, #0056b3);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+  .btn-3d {
+    position: relative;
+    border: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    transform: perspective(600px) rotateY(0deg);
+  }
+  
+  .btn-3d:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    transform: rotateY(90deg);
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+  
+  .btn-3d:hover:before {
+    transform: rotateY(0deg);
+    background: rgba(0, 0, 0, 0.4);
+  }
+  
+  @keyframes rotate3d {
+    0% {
+      transform: rotateX(0) rotateY(0) rotateZ(0);
+    }
+    100% {
+      transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+    }
+  }
+  
+  .threed-animation {
+    animation: rotate3d 5s infinite linear;
+  }
+  

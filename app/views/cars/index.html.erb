@@ -1,0 +1,87 @@
+<%= render "devise/shared/nav" %>
+  <h1 >Search For CARS</h1>
+
+  <%= form_tag(root_path, method: :get) do %>
+<div class="container-fluid">
+  <div class="row navbar justify-content-center ">
+      <div class="col-md-4 mb-3  ">
+        <div class="card text-white bg-dark mb-40">
+          <div class="card-header"><%= label_tag(:query, "Car Model") %></div>
+          <div class="card-body">
+            <h5 class="card-title"><%= select_tag('query[carmodel]', options_for_select(Car.pluck(:carmodel).uniq,selected: params[:query]&.[](:carmodel)), prompt: "Search by Car Model") %></h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card text-white bg-dark mb-40">
+          <div class="card-header"><%= label_tag(:city, "City") %></div>
+          <div class="card-body">
+            <h5 class="card-title"><%= select_tag('query[city]', options_for_select(Car.pluck(:city).uniq,selected: params[:query]&.[](:city)), prompt: "Search a City") %></h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card text-white bg-dark mb-40">
+          <div class="card-header"><%= label_tag(:price, "Price Range:") %></div>
+          <div class="card-body">
+            <h5 class="card-title"><%= select_tag('query[price]', options_for_select(Car.pluck(:price).uniq, selected: params[:query]&.[](:price)), prompt: "Select a price range") %> </h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3 ">
+        <div class="card text-white bg-dark mb-40">
+          <div class="card-header"> <%= label_tag(:enginedetail, "Engine Details :") %></div>
+          <div class="card-body">
+            <h5 class="card-title"> <%= select_tag('query[enginedetail]', options_for_select(Car.pluck(:enginedetail).uniq, selected: params[:query]&.[](:enginedetail)), prompt: "Select a Engine Details") %>  </h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card text-white bg-dark mb-40">
+          <div class="card-header"><%= label_tag(:transmissiontype, "Transmission Type :") %></div>
+          <div class="card-body">
+            <h5 class="card-title"> <%= select_tag('query[transmissiontype]', options_for_select(Car.pluck(:transmissiontype).uniq, selected: params[:query]&.[](:carmodel)), prompt: "Select a Transmission Type") %> </h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card text-white bg-dark mb-40">
+          <div class="card-header"><%= label_tag(:color, "Color :") %></div>
+          <div class="card-body">
+            <h5 class="card-title"><%= select_tag('query[color]', options_for_select(Car.pluck(:color).uniq,selected: params[:query]&.[](:color)), prompt: "Select a Color") %> </h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card text-white bg-dark mb-40">
+          <div class="card-header"><%= label_tag(:milage, "Milage :") %></div>
+          <div class="card-body">
+            <h5 class="card-title"><%= select_tag('query[milage]', options_for_select(Car.pluck(:milage).uniq, selected: params[:query]&.[](:milage)), prompt: "Select a Milage") %>  </h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card text-white bg-dark mb-40">
+          <div class="card-header"><%= label_tag(:enginecapacity, "Engine Capacity :") %></div>
+          <div class="card-body">
+            <h5 class="card-title"><%= select_tag('query[enginecapacity]', options_for_select(Car.pluck(:enginecapacity).uniq,selected: params[:query]&.[](:enginecapacity)), prompt: "Select a Engine Capacity") %> </h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card text-white bg-dark mb-40">
+          <div class="card-header">    <%= label_tag(:assemblytype, "Assembly Type :") %></div>
+          <div class="card-body">
+            <h5 class="card-title">    <%= select_tag('query[assemblytype]', options_for_select(Car.pluck(:assemblytype).uniq,selected: params[:query]&.[](:assemblytype)), prompt: "Select a Assembly Type") %> </h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 offset-md-6 d-flex justify-content-end align-items-end">
+        <button class="btn btn-primary btn-3d my-2 my-sm-0" type="submit">Search</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% end %>
+<%= render "cars/cars" %>
