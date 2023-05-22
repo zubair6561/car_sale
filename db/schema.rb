@@ -16,15 +16,15 @@ ActiveRecord::Schema.define(version: 2023_05_17_131122) do
   enable_extension "plpgsql"
 
   create_table "cars", force: :cascade do |t|
-    t.string "carmodel"
+    t.string "car_model"
     t.string "city"
     t.string "price"
-    t.string "enginedetail"
-    t.string "transmissiontype"
+    t.string "engine_detail"
+    t.string "transmission_type"
     t.string "color"
     t.string "milage"
-    t.string "enginecapacity"
-    t.string "assemblytype"
+    t.string "engine_capacity"
+    t.string "assembly_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

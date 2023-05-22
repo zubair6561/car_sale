@@ -8,7 +8,7 @@
         <div class="card text-white bg-dark mb-40">
           <div class="card-header"><%= label_tag(:query, "Car Model") %></div>
           <div class="card-body">
-            <h5 class="card-title"><%= select_tag('query[carmodel]', options_for_select(Car.pluck(:carmodel).uniq,selected: params[:query]&.[](:carmodel)), prompt: "Search by Car Model") %></h5>
+            <h5 class="card-title"><%= select_tag('query[car_model]', options_for_select(Car.pluck(:car_model).uniq,selected: params[:query]&.[](:car_model)), prompt: "Search by Car Model") %></h5>
           </div>
         </div>
       </div>
@@ -30,17 +30,17 @@
       </div>
       <div class="col-md-4 mb-3 ">
         <div class="card text-white bg-dark mb-40">
-          <div class="card-header"> <%= label_tag(:enginedetail, "Engine Details :") %></div>
+          <div class="card-header"> <%= label_tag(:engine_detail, "Engine Details :") %></div>
           <div class="card-body">
-            <h5 class="card-title"> <%= select_tag('query[enginedetail]', options_for_select(Car.pluck(:enginedetail).uniq, selected: params[:query]&.[](:enginedetail)), prompt: "Select a Engine Details") %>  </h5>
+            <h5 class="card-title"> <%= select_tag('query[engine_detail]', options_for_select(Car.pluck(:engine_detail).uniq, selected: params[:query]&.[](:engine_detail)), prompt: "Select a Engine Details") %>  </h5>
           </div>
         </div>
       </div>
       <div class="col-md-4 mb-3">
         <div class="card text-white bg-dark mb-40">
-          <div class="card-header"><%= label_tag(:transmissiontype, "Transmission Type :") %></div>
+          <div class="card-header"><%= label_tag(:transmission_type, "Transmission Type :") %></div>
           <div class="card-body">
-            <h5 class="card-title"> <%= select_tag('query[transmissiontype]', options_for_select(Car.pluck(:transmissiontype).uniq, selected: params[:query]&.[](:carmodel)), prompt: "Select a Transmission Type") %> </h5>
+            <h5 class="card-title"> <%= select_tag('query[transmission_type]', options_for_select(Car.pluck(:transmission_type).uniq, selected: params[:query]&.[](:transmission_type)), prompt: "Select a Transmission Type") %> </h5>
           </div>
         </div>
       </div>
@@ -62,17 +62,17 @@
       </div>
       <div class="col-md-4 mb-3">
         <div class="card text-white bg-dark mb-40">
-          <div class="card-header"><%= label_tag(:enginecapacity, "Engine Capacity :") %></div>
+          <div class="card-header"><%= label_tag(:engine_capacity, "Engine Capacity :") %></div>
           <div class="card-body">
-            <h5 class="card-title"><%= select_tag('query[enginecapacity]', options_for_select(Car.pluck(:enginecapacity).uniq,selected: params[:query]&.[](:enginecapacity)), prompt: "Select a Engine Capacity") %> </h5>
+            <h5 class="card-title"><%= select_tag('query[engine_capacity]', options_for_select(Car.pluck(:engine_capacity).uniq,selected: params[:query]&.[](:engine_capacity)), prompt: "Select a Engine Capacity") %> </h5>
           </div>
         </div>
       </div>
       <div class="col-md-4 mb-3">
         <div class="card text-white bg-dark mb-40">
-          <div class="card-header">    <%= label_tag(:assemblytype, "Assembly Type :") %></div>
+          <div class="card-header">    <%= label_tag(:assembly_type, "Assembly Type :") %></div>
           <div class="card-body">
-            <h5 class="card-title">    <%= select_tag('query[assemblytype]', options_for_select(Car.pluck(:assemblytype).uniq,selected: params[:query]&.[](:assemblytype)), prompt: "Select a Assembly Type") %> </h5>
+            <h5 class="card-title">    <%= select_tag('query[assembly_type]', options_for_select(Car.pluck(:assembly_type).uniq,selected: params[:query]&.[](:assembly_type)), prompt: "Select a Assembly Type") %> </h5>
           </div>
         </div>
       </div>
