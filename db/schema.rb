@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_17_131122) do
+ActiveRecord::Schema.define(version: 2023_05_20_161406) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "ads", force: :cascade do |t|
+    t.string "step1_attribute"
+    t.string "step2_attribute"
+    t.string "step3_attribute"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "cars", force: :cascade do |t|
     t.string "car_model"
@@ -25,6 +33,7 @@ ActiveRecord::Schema.define(version: 2023_05_17_131122) do
     t.string "milage"
     t.string "engine_capacity"
     t.string "assembly_type"
+    t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

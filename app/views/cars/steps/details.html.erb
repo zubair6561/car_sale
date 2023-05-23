@@ -1,0 +1,95 @@
+<%= render "devise/shared/nav" %>
+<div class="progress ">
+  <div class="progress-bar progressbar" role="progressbar"  data-step="1"></div>
+</div>
+<%= simple_form_for @car, method: :put, url: wizard_path do |f| %>
+  <% if f.object.errors.any? %>
+    <div class="alert alert-danger">
+      <% f.object.errors.full_messages.each do |error| %>
+        <p><%= error %></p>
+      <% end %>
+    </div>
+  <% end %>
+  <fieldset>
+    <legend>Post Ads</legend>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-group">
+          <%= f.label :car_model %>
+          <%= f.select :car_model, options_for_select(['Suzuki', 'Toyota', 'Honda', 'BMW']), {}, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <%= f.label :city %>
+          <%= f.select :city, options_for_select(['Rawalpindi', 'Lahore', 'Quetta', 'Karachi', 'Peshawar', 'Islamabad']), {}, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <%= f.label :price %>
+          <%= f.text_field :price, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-group">
+          <%= f.label :engine_detail %>
+          <%= f.text_field :engine_detail, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <%= f.label :transmission_type %>
+          <%= f.select :transmission_type, options_for_select(['Auto', 'Manual']), {}, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <%= f.label :milage %>
+          <%= f.text_field :milage, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-group">
+          <%= f.label :color %>
+          <%= f.select :color, options_for_select(['Black', 'Grey', 'White', 'Silver', 'Red']), {}, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <%= f.label :engine_capacity %>
+          <%= f.text_field :engine_capacity, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <%= f.label :assembly_type %>
+          <%= f.select :assembly_type, options_for_select(['Local', 'Imported']), {}, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <%= f.label :description %>
+          <%= f.text_area :description, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+    <%= f.submit 'Next Step', class: 'btn btn-primary' %>
+  </fieldset>
+<%end%>
+
+
+
+
+
+
+
+
+
+

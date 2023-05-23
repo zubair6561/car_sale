@@ -60,3 +60,5 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'devise'
 gem 'pg_search', '~> 2.3', '>= 2.3.6'
+gem 'wicked'
+gem 'simple_form', '~> 5.2'

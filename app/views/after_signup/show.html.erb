@@ -1,0 +1,9 @@
+<%= form_for @user, url: wizard_path, method: :put do |f| %>
+  <%=  f.password_field :password  %>
+  <%=  f.password_field :password %>
+  <%=  f.text_field :password  %>
+  <%=  f.text_area  :password %>
+
+  <%= f.submit "Change Password" %>
+<% end %>
+<%= link_to 'skip', next_wizard_path %>

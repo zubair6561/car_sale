@@ -10,6 +10,7 @@ class CreateCars < ActiveRecord::Migration[6.1]
       t.string :milage
       t.string :engine_capacity
       t.string :assembly_type
+      t.string :description
 
       t.timestamps
     end

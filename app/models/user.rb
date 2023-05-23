@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -15,7 +16,6 @@ class User < ApplicationRecord
   def self.find_by_email_or_phone(identifier)
     where('email = :identifier OR contact_number = :identifier', identifier: identifier).first
   end
-
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
     if (identifier = conditions.delete(:identifier))
@@ -25,3 +25,4 @@ class User < ApplicationRecord
     end
   end
 end
+

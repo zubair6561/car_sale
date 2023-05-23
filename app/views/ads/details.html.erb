@@ -1,0 +1,21 @@
+step1
+<%= form_for @car, method: :put, url: wizard_path do |f| %>
+  <% if f.object.errors.any? %>
+    <div class="error_messages">
+      <% f.object.errors.full_messages.each do |error| %>
+        <p><%= error %></p>
+      <% end %>
+    </div>
+  <% end %>
+
+  <fieldset>
+    <legend>Car details</legend>
+
+    <div>
+      <%= f.label :price %>
+      <%= f.text_field :price %>
+    </div>
+  </fieldset>
+<% end %>
+<%= link_to "Next",next_wizard_path(step: :details), class: "btn btn-primary" %>
+  

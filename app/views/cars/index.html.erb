@@ -54,7 +54,7 @@
       </div>
       <div class="col-md-4 mb-3">
         <div class="card text-white bg-dark mb-40">
-          <div class="card-header"><%= label_tag(:milage, "Milage :") %></div>
+          <div class="card-header"><%= label_tag(:milage, "Milage (km/h):") %></div>
           <div class="card-body">
             <h5 class="card-title"><%= select_tag('query[milage]', options_for_select(Car.pluck(:milage).uniq, selected: params[:query]&.[](:milage)), prompt: "Select a Milage") %>  </h5>
           </div>
@@ -62,7 +62,7 @@
       </div>
       <div class="col-md-4 mb-3">
         <div class="card text-white bg-dark mb-40">
-          <div class="card-header"><%= label_tag(:engine_capacity, "Engine Capacity :") %></div>
+          <div class="card-header"><%= label_tag(:engine_capacity, "Engine Capacity (cc) :") %></div>
           <div class="card-body">
             <h5 class="card-title"><%= select_tag('query[engine_capacity]', options_for_select(Car.pluck(:engine_capacity).uniq,selected: params[:query]&.[](:engine_capacity)), prompt: "Select a Engine Capacity") %> </h5>
           </div>
@@ -70,9 +70,9 @@
       </div>
       <div class="col-md-4 mb-3">
         <div class="card text-white bg-dark mb-40">
-          <div class="card-header">    <%= label_tag(:assembly_type, "Assembly Type :") %></div>
+          <div class="card-header"><%= label_tag(:assembly_type, "Assembly Type :") %></div>
           <div class="card-body">
-            <h5 class="card-title">    <%= select_tag('query[assembly_type]', options_for_select(Car.pluck(:assembly_type).uniq,selected: params[:query]&.[](:assembly_type)), prompt: "Select a Assembly Type") %> </h5>
+            <h5 class="card-title"><%= select_tag('query[assembly_type]', options_for_select(Car.pluck(:assembly_type).uniq,selected: params[:query]&.[](:assembly_type)), prompt: "Select a Assembly Type") %> </h5>
           </div>
         </div>
       </div>
