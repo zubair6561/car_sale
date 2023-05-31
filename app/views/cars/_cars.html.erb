@@ -15,21 +15,20 @@
     </thead>
     <tbody>
       <% @cars.each do |car| %>
-        <tr>
-          <td><%= car.car_model %></td>
-          <td><%= car.city %></td>
-          <td><%= car.price %></td>
-          <td><%= car.engine_detail %></td>
-          <td><%= car.transmission_type %></td>
-          <td><%= car.color%></td>
-          <td><%= car.milage %></td>
-          <td><%= car.engine_capacity %></td>
-          <td><%= car.assembly_type %></td>  
-        </tr>
+        <% if !car&.post&.closed? %>
+          <tr>
+            <td><%= car.car_model %></td>
+            <td><%= car.city %></td>
+            <td><%= car.price %></td>
+            <td><%= car.engine_detail %></td>
+            <td><%= car.transmission_type %></td>
+            <td><%= car.color%></td>
+            <td><%= car.milage %></td>
+            <td><%= car.engine_capacity %></td>
+            <td><%= car.assembly_type %></td>  
+          </tr>
+        <% end %>
       <% end %>
     </tbody>
-  </table>
+  </table> 
 </div>
-
-
-

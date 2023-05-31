@@ -1,2 +1,0 @@
-module Pet::StepsHelper
-end

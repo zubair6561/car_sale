@@ -1,11 +1,11 @@
 class User < ApplicationRecord
-  
+  has_many :cars
+  has_many :posts
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, authentication_keys: [:identifier]
   attr_accessor :identifier
-
   validates_format_of :email, with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :firstname, :lastname, :username, length: { maximum: 30 }
   validates :password,  length: { minimum: 8 },
@@ -25,4 +25,5 @@ class User < ApplicationRecord
     end
   end
 end
+
 

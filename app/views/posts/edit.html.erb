@@ -1,17 +1,8 @@
 <%= render "devise/shared/nav" %>
-<div class="progress ">
-  <div class="progress-bar progressbar" role="progressbar"></div>
-</div>
-<%= simple_form_for @car, method: :put, url: wizard_path do |f| %>
-  <% if f.object.errors.any? %>
-    <div class="alert alert-danger">
-      <% f.object.errors.full_messages.each do |error| %>
-        <p><%= error %></p>
-      <% end %>
-    </div>
-  <% end %>
-  <fieldset>
-    <legend>Post Ads</legend>
+<h1>Edit Car</h1>
+<div class="container bg-navy">
+<%= form_for @posts, url: post_path(@posts), method: :patch do |f| %>
+  <div class="container">
     <div class="row">
       <div class="col-md-4">
         <div class="form-group">
@@ -71,6 +62,25 @@
           <%= f.select :assembly_type, options_for_select(['Local', 'Imported']), {}, class: 'form-control' %>
         </div>
       </div>
+      <div class="col-md-4">
+        <div class="form-group">
+        
+          <% @posts.images.each do |image| %>
+            <%= image_tag url_for(image), class: "img-thumbnail border-primary", width: 100, height: 100 %>
+          <% end %>
+          <%= f.file_field :images, multiple: true, class: "form-control-file border-secondary" %>
+        </div>
+      </div>
+       <div class="col-md-4">
+      <div class="form-group">
+          <%= f.label :primary_contact, 'Primary Contact Number' %>
+          <%= f.text_field :primary_contact, class: "form-control", placeholder: '+92-xxx-xxxxxxx' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :secondary_contact, 'Secondary Contact Number' %>
+          <%= f.text_field :secondary_contact, class: "form-control", placeholder: '+92-xxx-xxxxxxx' %>
+        </div>
+      </div>
     </div>
     <div class="row">
       <div class="col-md-12">
@@ -79,15 +89,19 @@
           <%= f.text_area :description, class: 'form-control' %>
         </div>
       </div>
+      <div class="form-group">
+        <%= f.submit 'Update Post', class: 'btn btn-primary' %>
+      </div>
     </div>
-
-    <%= f.submit 'Next Step', class: 'btn btn-primary' %>
-  </fieldset>
-<%end%>
-
-
+  </div>
+  <% end %>
+</div>
+  
 
 
+
+
+  
 
 
 

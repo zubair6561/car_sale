@@ -62,3 +62,7 @@ gem 'devise'
 gem 'pg_search', '~> 2.3', '>= 2.3.6'
 gem 'wicked'
 gem 'simple_form', '~> 5.2'
+gem 'shrine'
+gem 'image_processing', '~> 1.12', '>= 1.12.1'
+# gem 'kaminari'
+

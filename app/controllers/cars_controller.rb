@@ -9,14 +9,10 @@ class CarsController < ApplicationController
             end
   end
 
-  # def new
-  #   @car = Car.new  
-  # end 
-
   def create
-    @car = Car.new
+    @car = current_user.cars.new
     @car.save(validate: false)
-    redirect_to car_step_path(@car, Car.form_steps.first)
+    redirect_to car_step_path(@car, Car.form_steps.first) 
   end
 
   def show
@@ -24,26 +20,9 @@ class CarsController < ApplicationController
     render_wizard
   end
 
-
-  
-  # def create
-  #    @car = Car.new(car_params)
-
-  #   if @car.save
-  #     # redirect_to car_path(@car)
-  #     redirect_to root_path
-  #   else
-  #     redirect_to root_path
-  #   end
-
-  #   # @car = Car.new
-  #   # @car.save(validate: false)
-  #   # redirect_to car_ad_path(@car, Car.form_steps.first), method: :put, action: :update
-  # end
-
   private
 
   def car_params
-    params.require(:car).permit(:car_model, :city, :price,:color, :engine_detail, :transmission_type, :milage, :assembly_type, :engine_capacity)
+    params.require(:car).permit(:car_model, :city, :price,:color, :engine_detail, :transmission_type, :milage, :assembly_type, :engine_capacity, :description, :user_id, :secondary_contact, :primary_contact, :images => [])
   end
 end
