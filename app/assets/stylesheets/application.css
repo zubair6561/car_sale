@@ -97,16 +97,29 @@ td {
     background: rgba(0, 0, 0, 0.4);
   }
   
-  @keyframes rotate3d {
+  @keyframes wave {
     0% {
-      transform: rotateX(0) rotateY(0) rotateZ(0);
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(20deg);
     }
     100% {
-      transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+      transform: rotate(0deg);
     }
   }
   
-  .threed-animation {
-    animation: rotate3d 5s infinite linear;
+  .logo {
+    animation: wave 2s infinite linear;
   }
   
+.progressbar{
+    width: 33.33%;
+
+  }
+.progressbar2{
+  width: 66.66%;
+ }
+.progressbar3{
+  width: 100%;
+ }

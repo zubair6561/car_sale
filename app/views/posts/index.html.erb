@@ -1,0 +1,53 @@
+<%= render "devise/shared/nav" %>
+<div class="container">
+  <h1>My Posts</h1>
+  <% if @posts.any? %>
+    <table class="table table-bordered table-striped">
+      <thead class="bg-dark text-white">
+        <tr>
+          <th>Car Model</th>
+          <th>City</th>
+          <th>Price</th>
+          <th>Engine Details </th>
+          <th>Transmission Type</th>
+          <th>Color </th>
+          <th>Milage (km/h)</th>
+          <th>Engine Capacity (cc)</th>
+          <th>Assembly Type</th>
+          <th>Status</th>
+          <th>Actions </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @posts.each do |post| %>
+          <tr>
+            <td><%= post.car.car_model %></td>
+            <td><%= post.car.city %></td>
+            <td><%= post.car.price %></td>
+            <td><%= post.car.engine_detail %></td>
+            <td><%= post.car.transmission_type %></td>
+            <td><%= post.car.color%></td>
+            <td><%= post.car.milage %></td>
+            <td><%= post.car.engine_capacity %></td>
+            <td><%= post.car.assembly_type %></td>
+            <td><%= post.closed ? 'Closed' : 'Open' %></td>
+            <td>
+              <div class="btn-group" role="group" aria-label="Actions">
+                <%= link_to 'Edit', edit_post_path(post.car), class: 'btn btn-primary' %>
+                <%= link_to 'Open/Close', close_post_path(post), method: :patch, class: 'btn btn-success' %>
+                <%= link_to 'Delete', post_path(post.car), method: :delete, data: { confirm: 'Are you sure you want to delete this post?' }, class: 'btn btn-danger' %>
+              </div>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <p>No cars posted.</p>
+  <% end %>
+</div>
+
+
+
+
+

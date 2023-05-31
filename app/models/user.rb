@@ -1,10 +1,11 @@
 class User < ApplicationRecord
+  has_many :cars
+  has_many :posts
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, authentication_keys: [:identifier]
   attr_accessor :identifier
-
   validates_format_of :email, with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :firstname, :lastname, :username, length: { maximum: 30 }
   validates :password,  length: { minimum: 8 },
@@ -15,7 +16,6 @@ class User < ApplicationRecord
   def self.find_by_email_or_phone(identifier)
     where('email = :identifier OR contact_number = :identifier', identifier: identifier).first
   end
-
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
     if (identifier = conditions.delete(:identifier))
@@ -25,3 +25,5 @@ class User < ApplicationRecord
     end
   end
 end
+
+
